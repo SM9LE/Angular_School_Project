@@ -39,8 +39,10 @@ export class LdapListComponent implements OnInit, AfterViewInit {
     console.log("Mat Paginator:", this.paginator);
   }
 
+  // TODO : COMMENTER
   unactiveSelected = false;
 
+  // TODO : COMMENTER
   // Fonction permettant de récupérer toutes les données de la BDD
   private getUsers(): void {
     this.dataSource.data = LDAP_USERS;
@@ -49,6 +51,7 @@ export class LdapListComponent implements OnInit, AfterViewInit {
     }
   }
 
+  // TODO : COMMENTER
   unactiveChanged($event: MatSlideToggleChange): void {
     this.unactiveSelected = $event.checked;
     this.getUsers();

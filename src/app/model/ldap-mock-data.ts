@@ -1,6 +1,7 @@
 import {UserLdap} from './user-ldap'
 
 // Remplit les données de la BDD présente dans user-ldap.ts
+// Mock permet de faire semblant d'appeler un webservice
 
 export const LDAP_USERS: UserLdap[] = [
   {
