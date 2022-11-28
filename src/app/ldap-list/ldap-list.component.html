@@ -1,10 +1,12 @@
 <div class="mat-elevation-z8">
 
-  <!-- TODO : COMMENTER -->
   <!-- L'import des modules se fait dans le app.module.ts dans "import" et en entête -->
+
+  <!-- En dehors du tableau, j'insère une barre de recherche -->
   <div class="toolbar-filter">&nbsp;&nbsp;
     <mat-form-field style="width: 40%">
       <mat-label>Nom complet</mat-label>
+      <!-- Permet de -->
       <input matInput (keyup)="applyFilter($event)"
              placeholder="Entrez le début d'un nom de famille" />
     </mat-form-field>

@@ -10,7 +10,7 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class NavbarComponent {
 
-  // Je sais pas TODO : Comprendre ce que c'est
+  // TODO : Commenter
   isHandset$: Observable<boolean> =
     this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
