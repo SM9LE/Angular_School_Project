@@ -16,7 +16,6 @@ export class LdapListComponent implements OnInit, AfterViewInit {
 
   // Colonnes permettant de faire le tableau dans ldap-list html
   displayedColumns: string[] = ['nomComplet', 'mail', 'employeNumero', 'employeNiveau'];
-  // Je sais pas
   dataSource = new MatTableDataSource([]);
 
   // @ViewChild permet d'utiliser des directives, c'est un décorateur
