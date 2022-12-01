@@ -19,6 +19,7 @@ export class LdapListComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['nomComplet', 'mail', 'employeNumero', 'employeNiveau'];
   // Je sais pas
   dataSource = new MatTableDataSource<UserLdap>([]);
+  user: UserLdap;
 
   // Je sais pas ce qu'est ViewChild TODO : Faire la doc
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
@@ -43,16 +44,23 @@ export class LdapListComponent implements OnInit, AfterViewInit {
   // TODO : COMMENTER
   // Fonction permettant de récupérer toutes les données de la BDD
   private getUsers(): void {
-    this.usersService.getUsers(login).subscribe(
+    this.usersService.getUsers().subscribe(
       users => {
         if (this.unactiveSelected) {
-          this.dataSource.data = users.filter (user =>
-            user.active === false)
+          this.dataSource.data = users.filter(user => user.active === false);
         }
         else {
           this.dataSource.data = users
         }
       });
+  }
+// TODO : COMMENTER
+  edit(login: string) {
+    this.router.navigate(['/user', login]).then( (e) => {
+      if (! e) {
+        console.log("Navigation has failed!");
+      }
+    });
   }
 
   // TODO : COMMENTER
