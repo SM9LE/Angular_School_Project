@@ -17,6 +17,8 @@ import {MatInputModule} from "@angular/material/input";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import { LdapDetailComponent } from './ldap-detail/ldap-detail.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -38,7 +40,10 @@ import { LdapDetailComponent } from './ldap-detail/ldap-detail.component';
     MatListModule,
     MatSlideToggleModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-// Agit comme un constructeur UserLdap
+// Agit comme un tableau UserLdap
 
 export interface UserLdap
 {
