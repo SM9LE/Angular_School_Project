@@ -51,7 +51,11 @@
     <!-- Permet d'attribuer chaque ligne à chaque élément de la base de données locale -->
     <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="edit(row.login)"></tr>
   </table>
-
+  <div class="mat-elevation-z8">
+    <button mat-raised-button color="primary" (click)="addUser()">
+      Ajouter un utilisateur
+    </button>
+  </div>
   <!-- En dehors du tableau, permet de choisir le nombre de données présentes sur une page -->
   <mat-paginator
     [pageSizeOptions]="[25, 50]"

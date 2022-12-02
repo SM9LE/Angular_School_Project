@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LdapDetailComponent } from './ldap-detail.component';
+import {LdapAddComponent} from "../ldap-add/ldap-add.component";
 
 describe('LdapDetailComponent', () => {
   let component: LdapDetailComponent;
@@ -12,7 +13,7 @@ describe('LdapDetailComponent', () => {
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LdapDetailComponent);
+    fixture = TestBed.createComponent(LdapAddComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
