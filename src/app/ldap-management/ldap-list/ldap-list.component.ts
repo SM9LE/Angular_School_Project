@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSlideToggleChange} from "@angular/material/slide-toggle";
-import {UserLdap} from "../model/user-ldap";
-import {UsersService} from "../service/users.service";
+import {UserLdap} from "../../model/user-ldap";
+import {UsersService} from "../../service/users.service";
 import {Router} from "@angular/router";
 
 
