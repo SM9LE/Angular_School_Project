@@ -1,15 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LdapDetailComponent } from './ldap-detail.component';
-import {LdapAddComponent} from "../ldap-add/ldap-add.component";
+import { LdapAddComponent } from './ldap-add.component';
 
-describe('LdapDetailComponent', () => {
-  let component: LdapDetailComponent;
-  let fixture: ComponentFixture<LdapDetailComponent>;
+describe('LdapAddComponent', () => {
+  let component: LdapAddComponent;
+  let fixture: ComponentFixture<LdapAddComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LdapDetailComponent ]
+      declarations: [ LdapAddComponent ]
     })
     .compileComponents();
 

@@ -78,4 +78,12 @@ export class LdapListComponent implements OnInit, AfterViewInit {
     const filterValue = ($event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  addUser(){
+    this.router.navigate(['/user/add']).then( (e) => {
+      if (! e) {
+        console.log('Navigation has failed!');
+      }
+    });
+  }
 }
