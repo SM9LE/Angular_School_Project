@@ -49,7 +49,7 @@
     <!-- Permet d'afficher tous les *matHeaderCellDef -->
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <!-- Permet d'attribuer chaque ligne à chaque élément de la base de données locale -->
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="edit(row.login)"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="edit(row.id)"></tr>
   </table>
   <div class="mat-elevation-z8">
     <button mat-raised-button color="primary" (click)="addUser()">

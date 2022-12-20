@@ -39,9 +39,11 @@ export class LdapEditComponent extends LdapDetailComponent implements OnInit {
   }
 
   private getUser(): void {
-    const login = this.route.snapshot.paramMap.get('id');
+    const id = +this.route.snapshot.paramMap.get('id');
+    // TODO : Intégrer la fonction genId de in-memory-users-service.ts ????
+    console.log(id);
     this.processLoadRunning = true;
-    this.usersService.getUser(login).subscribe(
+    this.usersService.getUser(id).subscribe(
       user => {
         this.user = user;
         console.log("LdapDetail getUser =");
@@ -54,6 +56,5 @@ export class LdapEditComponent extends LdapDetailComponent implements OnInit {
         this.snackBar.open('Utilisateur non trouvé !', 'X');
       }
     );
-    console.log("getUser= " + login)
   }
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {UserLdap} from "../model/user-ldap";
 import {Observable, of, throwError} from "rxjs";
 import {LDAP_USERS} from "../model/ldap-mock-data";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -9,31 +10,29 @@ import {LDAP_USERS} from "../model/ldap-mock-data";
 export class UsersService {
 
   static users: UserLdap[] = LDAP_USERS;
+  private usersUrl = 'api/users';
+  private httpOptions = new HttpHeaders({'Content-Type': 'application/json'});
 
   getUsers(): Observable<UserLdap[]> {
-    return of (UsersService.users);
+    return this.http.get<UserLdap[]>(this.usersUrl);
   }
 
   addUser(user: UserLdap): Observable<UserLdap> {
-    UsersService.users.push(user);
-    return of (user);
+    return this.http.post<UserLdap>(this.usersUrl, user, { headers: this.httpOptions });
   }
 
-  updateUser(userToUpdate: UserLdap): Observable<UserLdap> {
-    const user = UsersService.users.find(u => u.login === userToUpdate.login);
-    if (user)
-    {
-      user.nom = userToUpdate.nom;
-      user.prenom = userToUpdate.prenom;
-      user.nomComplet = user.nom + ' ' + user.prenom;
-      user.motDePasse = userToUpdate.motDePasse;
-      return of (userToUpdate);
-    }
-    return throwError('Utilisateur non trouvé');
-  }
-  getUser(login: string): Observable<UserLdap> {
-     return of (UsersService.users.find(user => user.login === login));
+  updateUser(user: UserLdap): Observable<UserLdap> {
+    return this.http.put<UserLdap>(this.usersUrl + '/' + user.id, user, {headers: this.httpOptions});
   }
 
-  constructor() { }
+  deleteUser(id: number): Observable<UserLdap> {
+    return this.http.delete<UserLdap>(this.usersUrl + '/' + id, {headers: this.httpOptions});
+  }
+
+  getUser(id: number): Observable<UserLdap> {
+     return this.http.get<UserLdap>(this.usersUrl + '/' + id);
+  }
+
+  constructor(private http: HttpClient) {
+  }
 }
