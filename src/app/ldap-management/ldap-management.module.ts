@@ -14,7 +14,6 @@ import {HttpClientModule} from "@angular/common/http";
 import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 import {InMemoryUsersService} from "../service/in-memory-users.service";
 
-
 @NgModule({
   declarations: [
     LdapListComponent,
